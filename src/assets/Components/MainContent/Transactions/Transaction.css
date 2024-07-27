@@ -1,0 +1,36 @@
+.hero-container .navigation-transactions-container {
+  @apply bg-white rounded-xl mt-0;
+}
+
+.hero-container .navigation-transactions-container .navigation-bar {
+  @apply flex items-center justify-between;
+}
+
+.hero-container .navigation-transactions-container .navigation-bar ul {
+  @apply flex p-3;
+}
+
+.hero-container .navigation-transactions-container .navigation-bar ul + div {
+  @apply flex items-center justify-center w-1/4;
+}
+
+.hero-container .all-transactions table {
+  @apply w-full font-semibold text-left text-sm capitalize;
+}
+
+.hero-container .all-transactions table th,
+.hero-container .all-transactions table td {
+  @apply py-4 px-6;
+}
+
+.hero-container .all-transactions table td > p > span {
+  @apply text-xs text-customGrey800;
+}
+
+.hero-container .all-transactions table thead tr {
+  @apply border-y-2 border-customGrey400 text-gray-400;
+}
+
+.hero-container .all-transactions table tbody .status {
+  @apply text-customGrey400 rounded-xl w-fit px-2 py-1 text-xs;
+}

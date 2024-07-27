@@ -1,0 +1,40 @@
+input,
+textarea {
+  @apply w-full p-2 outline-none border-2 transition-all rounded-lg focus:border-customPurple800;
+}
+
+textarea {
+  @apply resize-none h-48;
+}
+
+.hero-container {
+  @apply space-y-16;
+}
+
+.hero-container .contact-form-container {
+  @apply grid grid-cols-1 gap-2 md:grid-cols-2;
+}
+
+.hero-container .contact-form-container .form-box {
+  @apply p-4 rounded-xl bg-white;
+}
+
+.hero-container .contact-form-container .form-box h2 {
+  @apply font-semibold mb-3;
+}
+
+.hero-container .live-chat-container {
+  @apply grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-0;
+}
+
+.hero-container .live-chat-container .chat-box {
+  @apply p-4 rounded-xl space-y-2 bg-customPurple800 font-semibold;
+}
+
+.hero-container .live-chat-container .chat-box h2 {
+  @apply w-fit text-xs rounded-full px-2 py-1 bg-white text-customPurple800;
+}
+
+.hero-container .live-chat-container .chat-box p {
+  @apply text-white;
+}

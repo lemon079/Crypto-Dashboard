@@ -1,0 +1,11 @@
+.wallet-button-container{
+    @apply mb-5 rounded-xl mx-auto bg-white grid grid-cols-1 p-4 gap-5 md:grid-cols-3 md:max-w-[800px] lg:max-w-full;
+}
+
+.currentprice-transaction-container{
+    @apply mb-5 grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2;
+}
+
+.cards-container{
+    @apply grid grid-cols-1 gap-4 md:grid-cols-2;
+}
