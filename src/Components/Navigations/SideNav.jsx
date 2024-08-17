@@ -6,25 +6,9 @@ import { BiSupport } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 
-const SideNav = ({openNav}) => {
+const SideNav = ({openNav, navLinks, setCurrentTabName}) => {
   const [activeLink, setActiveLink] = useState("Dashboard");
-  const navLinks = [
-    {
-      text: "Dashboard",
-      icon: MdDashboardCustomize,
-      path: "/Dashboard",
-    },
-    {
-      text: "Transactions",
-      icon: TbArrowsDoubleNeSw,
-      path: "/Transaction",
-    },
-    {
-      text: "Support",
-      icon: BiSupport,
-      path: "/Support",
-    },
-  ];
+ 
 
   return (
     <>
@@ -36,7 +20,10 @@ const SideNav = ({openNav}) => {
             return (
               <li key={link.text}>
                 <NavLink
-                  onClick={() => setActiveLink(link.text)}
+                  onClick={() => {
+                    setActiveLink(link.text)
+                    setCurrentTabName(link.text);
+                  }}
                   to={link.path}
                 >
                   <NavLinks

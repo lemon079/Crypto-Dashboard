@@ -38,7 +38,7 @@ const CurrentPrice = ({ text = '' }) => {
             </section>
 
             <figure>
-                <img src={`public/Graph.png`} alt="graph" className='w-full' />
+                <img src='/Graph.png' alt="graph" className='w-full' />
             </figure>
 
             <section className='timestamp-container'>

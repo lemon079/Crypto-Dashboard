@@ -1,10 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-import SideNav from "./assets/Components/Navigations/SideNav";
-import Header from "./assets/Components/Header/Header";
-import Dashboard from './assets/Components/MainContent/Dashboard/Dashboard'
-import Transaction from "./assets/Components/MainContent/Transactions/Transaction";
-import Support from "./assets/Components/MainContent/Support/Support";
+import { MdDashboardCustomize } from "react-icons/md";
+import { TbArrowsDoubleNeSw } from "react-icons/tb";
+import { BiSupport } from "react-icons/bi";
+import SideNav from "./Components/Navigations/SideNav";
+import Header from "./Components/Header/Header";
+import Dashboard from './Components/MainContent/Dashboard/Dashboard'
+import Transaction from "./Components/MainContent/Transactions/Transaction";
+import Support from "./Components/MainContent/Support/Support";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -14,16 +17,34 @@ function App() {
     setIsNavOpen(prev => !prev);
   }
 
+  const navLinks = [
+    {
+      text: "Dashboard",
+      icon: MdDashboardCustomize,
+      path: "/Dashboard",
+    },
+    {
+      text: "Transactions",
+      icon: TbArrowsDoubleNeSw,
+      path: "/Transaction",
+    },
+    {
+      text: "Support",
+      icon: BiSupport,
+      path: "/Support",
+    },
+  ];
+  const [currentTabName, setCurrentTabName] = useState('Dashboard');
   return (
     <Router>
       <div className="relative flex overflow-auto min-w-[370px] mx-auto">
 
         <aside className={`px-4 py-14 space-y-4 shadow-lg absolute h-full bg-white ${isNavOpen && 'hidden'} sm:block sm:sticky sm:h-auto`}>
-          <SideNav openNav={openNav} />
+          <SideNav openNav={openNav} navLinks={navLinks} setCurrentTabName={setCurrentTabName} />
         </aside>
 
         <section className="w-full">
-          <Header openNav={openNav}/>
+          <Header openNav={openNav} currentTabName={currentTabName} />
           <main className=" bg-customGrey400">
             <div className="py-10 w-[80%] mx-auto max-w-[1200px]">
               <Routes>
